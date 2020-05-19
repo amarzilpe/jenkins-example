@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage ('Compile Stage1') {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
@@ -11,17 +11,17 @@ pipeline {
             }
         }
 
-        stage ('Testing Stage') {
+        stage ('Testing Stage2') {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn test'
+                echo "This is jenkins job"
                 }
             }
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('Deployment Stage3') {
             steps {
                 withMaven(maven : 'maven_3_5_0') {
                     sh 'mvn deploy'
