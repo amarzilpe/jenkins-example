@@ -5,26 +5,24 @@ pipeline {
         stage ('Compile Stage1') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean compile'
+               echo "compile"
                 }
             }
         }
 
-        stage ('Testing Stage2') {
+        stage ('Build Stage2') {
 
             steps {
-                withMaven(maven : 'maven_3_5_0') {
+                
                 echo "This is jenkins job"
                 }
             }
         }
 
 
-        stage ('Deployment Stage3') {
+        stage ('Testing Stage3') {
             steps {
-                withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn deploy'
+                echo "This is jenkins job"
                 }
             }
         }
